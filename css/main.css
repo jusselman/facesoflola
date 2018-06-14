@@ -1,0 +1,48 @@
+body {
+
+  background: url("../img/parrot.JPG") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.flip3D > img {
+
+    width:480px;
+    height:400px;
+}
+
+
+.flip3D { width:480px; height: 400px; margin: 45px;float: right; }
+.flip3D > .front{
+  /* position:absolute; */
+  -webkit-transform: perspective(1000px) rotateX(0deg);
+  transform: perspective(1000px) rotateX(0deg);
+  /* background-image: url("../img/turnaround.JPG"); width:240px; height:200px; border-radius: 7px; */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .5s linear 0s;
+  transition: transform .5s linear 0s;
+
+}
+.flip3D > .back{
+  /* position:absolute; */
+  -webkit-transform: perspective(600px) rotateY(180deg);
+  transform: perspective(600px) rotateY(180deg);
+  /* background-image: url("../img/eyes.JPG"); width:240px; height:200px; border-radius: 7px; */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .5s linear 0s;
+  transition: transform .5s linear 0s;
+}
+
+.flip3D:hover > .front {
+  -webkit-transform: perspective(600px) rotateY(-180deg);
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.flip3D:hover > .back {
+  -webkit-transform: perspective( 600px ) rotateY( 0deg );
+  transform: perspective( 600px ) rotateY( 0deg );
+}
